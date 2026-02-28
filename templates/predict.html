@@ -1,0 +1,81 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="max-w-2xl mx-auto">
+
+    <div class="bg-white dark:bg-slate-800
+            p-8 rounded-2xl shadow-sm
+            border border-gray-200 dark:border-slate-700"> 
+
+        <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">
+            Transaction Analysis
+        </h2>
+
+        <form action="/submit" method="POST" class="space-y-5">
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Step</label>
+                <input type="number" name="step" required
+                       class="w-full p-3 border border-gray-300 dark:border-slate-600
+                            rounded-lg
+                            bg-white dark:bg-slate-900
+                            text-slate-900 dark:text-slate-100
+                            focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Transaction Type</label>
+                <select name="type"
+                        class="w-full p-3 border border-gray-300 dark:border-slate-600
+                            rounded-lg
+                            bg-white dark:bg-slate-900
+                            text-slate-900 dark:text-slate-100
+                            focus:ring-2 focus:ring-indigo-500">
+                    <option value="0">Payment</option>
+                    <option value="3">Cash Out</option>
+                    <option value="4">Transfer</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Amount</label>
+                <input type="number" name="amount" required
+                       class="w-full p-3 border border-gray-300 dark:border-slate-600
+                            rounded-lg
+                            bg-white dark:bg-slate-900
+                            text-slate-900 dark:text-slate-100
+                            focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Old Balance</label>
+                <input type="number" name="oldbalanceOrg" required
+                       class="w-full p-3 border border-gray-300 dark:border-slate-600
+                            rounded-lg
+                            bg-white dark:bg-slate-900
+                            text-slate-900 dark:text-slate-100
+                            focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">New Balance</label>
+                <input type="number" name="newbalanceOrig" required
+                       class="w-full p-3 border border-gray-300 dark:border-slate-600
+                            rounded-lg
+                            bg-white dark:bg-slate-900
+                            text-slate-900 dark:text-slate-100
+                            focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold transition">
+                Analyze Transaction
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

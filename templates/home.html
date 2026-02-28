@@ -1,0 +1,46 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="bg-white dark:bg-slate-800
+            p-6 rounded-2xl shadow-sm
+            border border-gray-200 dark:border-slate-700">
+
+    <!-- Card 1 -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border">
+        <h3 class="text-sm text-gray-500">Model Status</h3>
+        <p class="text-2xl font-bold text-green-600 mt-2">Active</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border">
+        <h3 class="text-sm text-gray-500">Detection Type</h3>
+        <p class="text-2xl font-bold text-green-600 mt-2">Random Forest</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border">
+        <h3 class="text-sm text-gray-500">System</h3>
+        <p class="text-2xl font-bold text-green-600 mt-2">Real-time</p>
+    </div>
+
+</div>
+
+<!-- CTA -->
+<div class="mt-8 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white p-8 rounded-2xl">
+
+    <h2 class="text-2xl font-bold mb-2">
+        Analyze a New Transaction
+    </h2>
+
+    <p class="opacity-90 mb-4">
+        Use the AI engine to detect fraudulent financial activity instantly.
+    </p>
+
+    <a href="/predict"
+       class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-xl font-semibold">
+        Start Prediction
+    </a>
+
+</div>
+
+{% endblock %}

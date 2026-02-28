@@ -1,0 +1,46 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="max-w-xl mx-auto">
+
+    <div class="bg-white dark:bg-slate-800
+                p-10 rounded-2xl shadow-sm
+                border border-gray-200 dark:border-slate-700
+                text-center">
+
+        {% if result == 1 %}
+            <div class="text-red-500 text-5xl mb-4">🚨</div>
+            <h2 class="text-2xl font-bold text-red-600 dark:text-red-400">
+                Fraud Detected
+            </h2>
+            <p class="text-gray-500 dark:text-slate-400 mt-2">
+                High-risk transaction identified.
+            </p>
+        {% else %}
+            <div class="text-green-500 text-5xl mb-4">✅</div>
+            <h2 class="text-2xl font-bold text-green-600 dark:text-green-400">
+                Transaction Safe
+            </h2>
+            <p class="text-gray-500 dark:text-slate-400 mt-2">
+                No suspicious activity found.
+            </p>
+        {% endif %}
+
+        <!-- ML confidence -->
+        {% if prob is defined %}
+        <p class="mt-4 text-sm text-gray-500 dark:text-slate-400">
+            Confidence: <strong>{{ (prob * 100) | round(2) }}%</strong>
+        </p>
+        {% endif %}
+
+        <a href="/predict"
+           class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-700
+                  text-white px-6 py-3 rounded-xl font-semibold">
+            Try Another
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
